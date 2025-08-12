@@ -7,6 +7,8 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 
 @Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "dtype")
 @Getter @Setter
 public class Post {
 
