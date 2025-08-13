@@ -28,4 +28,9 @@ public class Member {
     public void prePersist() {
         createdAt = LocalDateTime.now();
     }
+
+    public void createMember(String setName, String setEmail) {
+        this.name = setName;
+        this.email = setEmail;
+    }
 }

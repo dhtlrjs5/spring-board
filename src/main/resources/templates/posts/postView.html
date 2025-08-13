@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>게시글 상세</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<header>
+    <h1>게시글 상세</h1>
+</header>
+<main>
+    <p><strong>ID:</strong> <span th:text="${post.id}"></span></p>
+    <p><strong>제목:</strong> <span th:text="${post.title}"></span></p>
+    <p><strong>작성자:</strong> <span th:text="${post.member.name}"></span></p>
+    <p><strong>작성일:</strong> <span th:text="${post.createdAt}"></span></p>
+    <p><strong>내용:</strong></p>
+    <p th:text="${post.content}"></p>
+
+    <br>
+    <a class="menu-btn" th:href="@{/posts}">게시글 목록으로</a>
+    <a class="menu-btn" th:href="@{/}">메인으로</a>
+</main>
+</body>
+</html>

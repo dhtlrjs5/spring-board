@@ -26,12 +26,6 @@ public class MemberService {
     }
 
     private void validateDuplicateMember(Member member) {
-        List<Member> findByNameMembers = memberRepository.findByName(member.getName());
-
-        if (!findByNameMembers.isEmpty()) {
-            throw new IllegalStateException("이미 존재하는 이름입니다.");
-        }
-
         List<Member> findByEmailMembers = memberRepository.findByEmail(member.getEmail());
 
         if (!findByEmailMembers.isEmpty()) {

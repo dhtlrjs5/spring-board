@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>게시글 목록</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <script th:src="@{/js/main.js}"></script>
+</head>
+<body>
+<header>
+    <h1>게시글 목록</h1>
+</header>
+<main>
+    <table border="1" style="margin: 0 auto; border-collapse: collapse; width: 80%;">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>제목</th>
+            <th>작성자</th>
+            <th>작성일</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="post : ${posts}">
+            <td>
+                <a th:href="@{/posts/{id}(id=${post.id})}" th:text="${post.id}"></a>
+            </td>
+            <td>
+                <a th:href="@{/posts/{id}(id=${post.id})}" th:text="${post.title}"></a>
+            </td>
+            <td th:text="${post.member.name}"></td>
+            <td th:text="${post.createdAt}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <br>
+    <a class="menu-btn" th:href="@{/}">메인으로</a>
+</main>
+</body>
+</html>
